@@ -1572,16 +1572,6 @@ function hosting_custom_settings_user_default_permissions() {
     'module' => 'actions_permissions',
   );
 
-  // Exported permission: 'execute hosting_server_flush_drush_cache_action'.
-  $permissions['execute hosting_server_flush_drush_cache_action'] = array(
-    'name' => 'execute hosting_server_flush_drush_cache_action',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'root' => 'root',
-    ),
-    'module' => 'actions_permissions',
-  );
-
   // Exported permission: 'execute hosting_site_backup_action'.
   $permissions['execute hosting_site_backup_action'] = array(
     'name' => 'execute hosting_site_backup_action',
@@ -1662,13 +1652,6 @@ function hosting_custom_settings_user_default_permissions() {
       'aegir client' => 'aegir client',
       'root' => 'root',
     ),
-    'module' => 'actions_permissions',
-  );
-
-  // Exported permission: 'execute hosting_site_update_translations_action'.
-  $permissions['execute hosting_site_update_translations_action'] = array(
-    'name' => 'execute hosting_site_update_translations_action',
-    'roles' => array(),
     'module' => 'actions_permissions',
   );
 
