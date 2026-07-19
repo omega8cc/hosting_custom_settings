@@ -409,6 +409,7 @@ function hosting_custom_settings_user_default_permissions() {
     'name' => 'administer tasks',
     'roles' => array(
       'admin' => 'admin',
+      'aegir client' => 'aegir client',
       'root' => 'root',
     ),
     'module' => 'hosting_task',
@@ -538,6 +539,51 @@ function hosting_custom_settings_user_default_permissions() {
       'root' => 'root',
     ),
     'module' => 'hosting_cron',
+  );
+
+  // Exported permission: 'create backdrop_cutover task'.
+  $permissions['create backdrop_cutover task'] = array(
+    'name' => 'create backdrop_cutover task',
+    'roles' => array(
+      'admin' => 'admin',
+      'administrator' => 'administrator',
+      'aegir account manager' => 'aegir account manager',
+      'aegir administrator' => 'aegir administrator',
+      'aegir client' => 'aegir client',
+      'aegir platform manager' => 'aegir platform manager',
+      'root' => 'root',
+    ),
+    'module' => 'hosting_backdrop',
+  );
+
+  // Exported permission: 'create backdrop_d6_upgrade task'.
+  $permissions['create backdrop_d6_upgrade task'] = array(
+    'name' => 'create backdrop_d6_upgrade task',
+    'roles' => array(
+      'admin' => 'admin',
+      'administrator' => 'administrator',
+      'aegir account manager' => 'aegir account manager',
+      'aegir administrator' => 'aegir administrator',
+      'aegir client' => 'aegir client',
+      'aegir platform manager' => 'aegir platform manager',
+      'root' => 'root',
+    ),
+    'module' => 'hosting_backdrop',
+  );
+
+  // Exported permission: 'create backdrop_upgrade task'.
+  $permissions['create backdrop_upgrade task'] = array(
+    'name' => 'create backdrop_upgrade task',
+    'roles' => array(
+      'admin' => 'admin',
+      'administrator' => 'administrator',
+      'aegir account manager' => 'aegir account manager',
+      'aegir administrator' => 'aegir administrator',
+      'aegir client' => 'aegir client',
+      'aegir platform manager' => 'aegir platform manager',
+      'root' => 'root',
+    ),
+    'module' => 'hosting_backdrop',
   );
 
   // Exported permission: 'create backup task'.
@@ -1020,6 +1066,7 @@ function hosting_custom_settings_user_default_permissions() {
     'name' => 'create update task',
     'roles' => array(
       'admin' => 'admin',
+      'aegir client' => 'aegir client',
       'root' => 'root',
     ),
     'module' => 'hosting_tasks_extra',
@@ -1029,6 +1076,17 @@ function hosting_custom_settings_user_default_permissions() {
   $permissions['create update_translations task'] = array(
     'name' => 'create update_translations task',
     'roles' => array(
+      'root' => 'root',
+    ),
+    'module' => 'hosting_tasks_extra',
+  );
+
+  // Exported permission: 'create utf8mb4_convert task'.
+  $permissions['create utf8mb4_convert task'] = array(
+    'name' => 'create utf8mb4_convert task',
+    'roles' => array(
+      'admin' => 'admin',
+      'aegir client' => 'aegir client',
       'root' => 'root',
     ),
     'module' => 'hosting_tasks_extra',
@@ -1514,6 +1572,21 @@ function hosting_custom_settings_user_default_permissions() {
     'module' => 'actions_permissions',
   );
 
+  // Exported permission: 'execute hosting_platform_dlock_action'.
+  $permissions['execute hosting_platform_dlock_action'] = array(
+    'name' => 'execute hosting_platform_dlock_action',
+    'roles' => array(
+      'admin' => 'admin',
+      'administrator' => 'administrator',
+      'aegir account manager' => 'aegir account manager',
+      'aegir administrator' => 'aegir administrator',
+      'aegir client' => 'aegir client',
+      'aegir platform manager' => 'aegir platform manager',
+      'root' => 'root',
+    ),
+    'module' => 'actions_permissions',
+  );
+
   // Exported permission: 'execute hosting_platform_dunlock_action'.
   $permissions['execute hosting_platform_dunlock_action'] = array(
     'name' => 'execute hosting_platform_dunlock_action',
@@ -1652,6 +1725,21 @@ function hosting_custom_settings_user_default_permissions() {
       'aegir account manager' => 'aegir account manager',
       'aegir administrator' => 'aegir administrator',
       'aegir client' => 'aegir client',
+      'root' => 'root',
+    ),
+    'module' => 'actions_permissions',
+  );
+
+  // Exported permission: 'execute hosting_site_utf8mb4_convert_action'.
+  $permissions['execute hosting_site_utf8mb4_convert_action'] = array(
+    'name' => 'execute hosting_site_utf8mb4_convert_action',
+    'roles' => array(
+      'admin' => 'admin',
+      'administrator' => 'administrator',
+      'aegir account manager' => 'aegir account manager',
+      'aegir administrator' => 'aegir administrator',
+      'aegir client' => 'aegir client',
+      'aegir platform manager' => 'aegir platform manager',
       'root' => 'root',
     ),
     'module' => 'actions_permissions',
