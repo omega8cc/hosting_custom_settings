@@ -762,6 +762,32 @@ function hosting_custom_settings_user_default_permissions() {
     'module' => 'hosting_git_pull',
   );
 
+  // Exported permission: 'create leftover_import task'.
+  $permissions['create leftover_import task'] = array(
+    'name' => 'create leftover_import task',
+    'roles' => array(
+      'admin' => 'admin',
+      'aegir administrator' => 'aegir administrator',
+      'aegir client' => 'aegir client',
+      'aegir platform manager' => 'aegir platform manager',
+      'root' => 'root',
+    ),
+    'module' => 'hosting_task',
+  );
+
+  // Exported permission: 'create leftover_purge task'.
+  $permissions['create leftover_purge task'] = array(
+    'name' => 'create leftover_purge task',
+    'roles' => array(
+      'admin' => 'admin',
+      'aegir administrator' => 'aegir administrator',
+      'aegir client' => 'aegir client',
+      'aegir platform manager' => 'aegir platform manager',
+      'root' => 'root',
+    ),
+    'module' => 'hosting_task',
+  );
+
   // Exported permission: 'create lock task'.
   $permissions['create lock task'] = array(
     'name' => 'create lock task',
