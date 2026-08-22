@@ -821,6 +821,20 @@ function hosting_custom_settings_user_default_permissions() {
     'module' => 'hosting_migrate',
   );
 
+  // Exported permission: 'create migrate_source task'.
+  $permissions['create migrate_source task'] = array(
+    'name' => 'create migrate_source task',
+    'roles' => array(
+      'admin' => 'admin',
+      'administrator' => 'administrator',
+      'aegir administrator' => 'aegir administrator',
+      'aegir client' => 'aegir client',
+      'aegir platform manager' => 'aegir platform manager',
+      'root' => 'root',
+    ),
+    'module' => 'hosting_migrate_source',
+  );
+
   // Exported permission: 'create new books'.
   $permissions['create new books'] = array(
     'name' => 'create new books',
