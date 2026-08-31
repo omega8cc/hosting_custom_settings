@@ -541,51 +541,6 @@ function hosting_custom_settings_user_default_permissions() {
     'module' => 'hosting_cron',
   );
 
-  // Exported permission: 'create backdrop_cutover task'.
-  $permissions['create backdrop_cutover task'] = array(
-    'name' => 'create backdrop_cutover task',
-    'roles' => array(
-      'admin' => 'admin',
-      'administrator' => 'administrator',
-      'aegir account manager' => 'aegir account manager',
-      'aegir administrator' => 'aegir administrator',
-      'aegir client' => 'aegir client',
-      'aegir platform manager' => 'aegir platform manager',
-      'root' => 'root',
-    ),
-    'module' => 'hosting_backdrop',
-  );
-
-  // Exported permission: 'create backdrop_d6_upgrade task'.
-  $permissions['create backdrop_d6_upgrade task'] = array(
-    'name' => 'create backdrop_d6_upgrade task',
-    'roles' => array(
-      'admin' => 'admin',
-      'administrator' => 'administrator',
-      'aegir account manager' => 'aegir account manager',
-      'aegir administrator' => 'aegir administrator',
-      'aegir client' => 'aegir client',
-      'aegir platform manager' => 'aegir platform manager',
-      'root' => 'root',
-    ),
-    'module' => 'hosting_backdrop',
-  );
-
-  // Exported permission: 'create backdrop_upgrade task'.
-  $permissions['create backdrop_upgrade task'] = array(
-    'name' => 'create backdrop_upgrade task',
-    'roles' => array(
-      'admin' => 'admin',
-      'administrator' => 'administrator',
-      'aegir account manager' => 'aegir account manager',
-      'aegir administrator' => 'aegir administrator',
-      'aegir client' => 'aegir client',
-      'aegir platform manager' => 'aegir platform manager',
-      'root' => 'root',
-    ),
-    'module' => 'hosting_backdrop',
-  );
-
   // Exported permission: 'create backup task'.
   $permissions['create backup task'] = array(
     'name' => 'create backup task',
