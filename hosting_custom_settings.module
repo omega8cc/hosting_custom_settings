@@ -5,3 +5,64 @@
  */
 
 include_once 'hosting_custom_settings.features.inc';
+
+/**
+ * Exported permissions whose defining module is not enabled on this box.
+ *
+ * The CMS-support modules (hosting_backdrop, hosting_grav, hosting_txp) ship
+ * dark and are enabled per box by a BOA control-file switch, so their task
+ * permissions are exported here WITHOUT a features dependency: a dependency
+ * would force-enable the module on every box and defeat the switch. Where the
+ * module is disabled its permissions are undefined, and Features would then
+ * warn on every revert and report this feature overridden for good. The two
+ * alter hooks below drop exactly those entries from both sides of the
+ * comparison, so the export is enforced wherever the module runs and silent
+ * where it does not. Not cached: one drush run can enable a module and
+ * rebuild the module data before it ends, and a stale answer here would
+ * strip the entries the rebuild is meant to pick up.
+ *
+ * @return array
+ *   Permission names, keyed by name.
+ */
+function _hosting_custom_settings_dark_permissions() {
+  $dark = array();
+  module_load_include('inc', 'hosting_custom_settings', 'hosting_custom_settings.features.user_permission');
+  if (!function_exists('hosting_custom_settings_user_default_permissions')) {
+    return $dark;
+  }
+  foreach (hosting_custom_settings_user_default_permissions() as $name => $permission) {
+    if (!empty($permission['module']) && !module_exists($permission['module'])) {
+      $dark[$name] = $name;
+    }
+  }
+  return $dark;
+}
+
+/**
+ * Implements hook_user_default_permissions_alter().
+ *
+ * The code side of the comparison and the list the revert rebuilds from.
+ */
+function hosting_custom_settings_user_default_permissions_alter(&$permissions) {
+  $dark = _hosting_custom_settings_dark_permissions();
+  if ($dark) {
+    $permissions = array_diff_key($permissions, $dark);
+  }
+}
+
+/**
+ * Implements hook_system_info_alter().
+ *
+ * The database side: features_get_normal() renders every permission the .info
+ * file lists, so the same entries have to leave that list too or the feature
+ * still reads as overridden on a box where the module is disabled.
+ */
+function hosting_custom_settings_system_info_alter(&$info, $file, $type) {
+  if ($type != 'module' || $file->name != 'hosting_custom_settings' || empty($info['features']['user_permission'])) {
+    return;
+  }
+  $dark = _hosting_custom_settings_dark_permissions();
+  if ($dark) {
+    $info['features']['user_permission'] = array_values(array_diff($info['features']['user_permission'], $dark));
+  }
+}
