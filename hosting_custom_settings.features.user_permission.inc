@@ -541,6 +541,51 @@ function hosting_custom_settings_user_default_permissions() {
     'module' => 'hosting_cron',
   );
 
+  // Exported permission: 'create backdrop_cutover task'.
+  $permissions['create backdrop_cutover task'] = array(
+    'name' => 'create backdrop_cutover task',
+    'roles' => array(
+      'admin' => 'admin',
+      'administrator' => 'administrator',
+      'aegir account manager' => 'aegir account manager',
+      'aegir administrator' => 'aegir administrator',
+      'aegir client' => 'aegir client',
+      'aegir platform manager' => 'aegir platform manager',
+      'root' => 'root',
+    ),
+    'module' => 'hosting_backdrop',
+  );
+
+  // Exported permission: 'create backdrop_d6_upgrade task'.
+  $permissions['create backdrop_d6_upgrade task'] = array(
+    'name' => 'create backdrop_d6_upgrade task',
+    'roles' => array(
+      'admin' => 'admin',
+      'administrator' => 'administrator',
+      'aegir account manager' => 'aegir account manager',
+      'aegir administrator' => 'aegir administrator',
+      'aegir client' => 'aegir client',
+      'aegir platform manager' => 'aegir platform manager',
+      'root' => 'root',
+    ),
+    'module' => 'hosting_backdrop',
+  );
+
+  // Exported permission: 'create backdrop_upgrade task'.
+  $permissions['create backdrop_upgrade task'] = array(
+    'name' => 'create backdrop_upgrade task',
+    'roles' => array(
+      'admin' => 'admin',
+      'administrator' => 'administrator',
+      'aegir account manager' => 'aegir account manager',
+      'aegir administrator' => 'aegir administrator',
+      'aegir client' => 'aegir client',
+      'aegir platform manager' => 'aegir platform manager',
+      'root' => 'root',
+    ),
+    'module' => 'hosting_backdrop',
+  );
+
   // Exported permission: 'create backup task'.
   $permissions['create backup task'] = array(
     'name' => 'create backup task',
@@ -715,6 +760,66 @@ function hosting_custom_settings_user_default_permissions() {
       'root' => 'root',
     ),
     'module' => 'hosting_git_pull',
+  );
+
+  // Exported permission: 'create grav_copy_upgrade task'.
+  $permissions['create grav_copy_upgrade task'] = array(
+    'name' => 'create grav_copy_upgrade task',
+    'roles' => array(
+      'admin' => 'admin',
+      'administrator' => 'administrator',
+      'aegir account manager' => 'aegir account manager',
+      'aegir administrator' => 'aegir administrator',
+      'aegir client' => 'aegir client',
+      'aegir platform manager' => 'aegir platform manager',
+      'root' => 'root',
+    ),
+    'module' => 'hosting_grav',
+  );
+
+  // Exported permission: 'create grav_cutover task'.
+  $permissions['create grav_cutover task'] = array(
+    'name' => 'create grav_cutover task',
+    'roles' => array(
+      'admin' => 'admin',
+      'administrator' => 'administrator',
+      'aegir account manager' => 'aegir account manager',
+      'aegir administrator' => 'aegir administrator',
+      'aegir client' => 'aegir client',
+      'aegir platform manager' => 'aegir platform manager',
+      'root' => 'root',
+    ),
+    'module' => 'hosting_grav',
+  );
+
+  // Exported permission: 'create grav_rename task'.
+  $permissions['create grav_rename task'] = array(
+    'name' => 'create grav_rename task',
+    'roles' => array(
+      'admin' => 'admin',
+      'administrator' => 'administrator',
+      'aegir account manager' => 'aegir account manager',
+      'aegir administrator' => 'aegir administrator',
+      'aegir client' => 'aegir client',
+      'aegir platform manager' => 'aegir platform manager',
+      'root' => 'root',
+    ),
+    'module' => 'hosting_grav',
+  );
+
+  // Exported permission: 'create grav_upgrade task'.
+  $permissions['create grav_upgrade task'] = array(
+    'name' => 'create grav_upgrade task',
+    'roles' => array(
+      'admin' => 'admin',
+      'administrator' => 'administrator',
+      'aegir account manager' => 'aegir account manager',
+      'aegir administrator' => 'aegir administrator',
+      'aegir client' => 'aegir client',
+      'aegir platform manager' => 'aegir platform manager',
+      'root' => 'root',
+    ),
+    'module' => 'hosting_grav',
   );
 
   // Exported permission: 'create leftover_import task'.
@@ -1044,6 +1149,51 @@ function hosting_custom_settings_user_default_permissions() {
       'root' => 'root',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'create txp_cutover task'.
+  $permissions['create txp_cutover task'] = array(
+    'name' => 'create txp_cutover task',
+    'roles' => array(
+      'admin' => 'admin',
+      'administrator' => 'administrator',
+      'aegir account manager' => 'aegir account manager',
+      'aegir administrator' => 'aegir administrator',
+      'aegir client' => 'aegir client',
+      'aegir platform manager' => 'aegir platform manager',
+      'root' => 'root',
+    ),
+    'module' => 'hosting_txp',
+  );
+
+  // Exported permission: 'create txp_rename task'.
+  $permissions['create txp_rename task'] = array(
+    'name' => 'create txp_rename task',
+    'roles' => array(
+      'admin' => 'admin',
+      'administrator' => 'administrator',
+      'aegir account manager' => 'aegir account manager',
+      'aegir administrator' => 'aegir administrator',
+      'aegir client' => 'aegir client',
+      'aegir platform manager' => 'aegir platform manager',
+      'root' => 'root',
+    ),
+    'module' => 'hosting_txp',
+  );
+
+  // Exported permission: 'create txp_upgrade task'.
+  $permissions['create txp_upgrade task'] = array(
+    'name' => 'create txp_upgrade task',
+    'roles' => array(
+      'admin' => 'admin',
+      'administrator' => 'administrator',
+      'aegir account manager' => 'aegir account manager',
+      'aegir administrator' => 'aegir administrator',
+      'aegir client' => 'aegir client',
+      'aegir platform manager' => 'aegir platform manager',
+      'root' => 'root',
+    ),
+    'module' => 'hosting_txp',
   );
 
   // Exported permission: 'create unlock task'.
