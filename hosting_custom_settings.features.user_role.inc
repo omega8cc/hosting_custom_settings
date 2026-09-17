@@ -47,6 +47,12 @@ function hosting_custom_settings_user_default_roles() {
     'weight' => 0,
   );
 
+  // Exported role: aegir site operator.
+  $roles['aegir site operator'] = array(
+    'name' => 'aegir site operator',
+    'weight' => 0,
+  );
+
   // Exported role: root.
   $roles['root'] = array(
     'name' => 'root',
