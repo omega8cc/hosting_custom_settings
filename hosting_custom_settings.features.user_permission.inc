@@ -57,6 +57,7 @@ function hosting_custom_settings_user_default_permissions() {
       'aegir administrator' => 'aegir administrator',
       'aegir client' => 'aegir client',
       'aegir platform manager' => 'aegir platform manager',
+      'aegir site operator' => 'aegir site operator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
       'root' => 'root',
@@ -82,6 +83,7 @@ function hosting_custom_settings_user_default_permissions() {
       'aegir account manager' => 'aegir account manager',
       'aegir administrator' => 'aegir administrator',
       'aegir client' => 'aegir client',
+      'aegir site operator' => 'aegir site operator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
       'root' => 'root',
@@ -156,6 +158,7 @@ function hosting_custom_settings_user_default_permissions() {
     'roles' => array(
       'admin' => 'admin',
       'aegir client' => 'aegir client',
+      'aegir site operator' => 'aegir site operator',
       'root' => 'root',
     ),
     'module' => 'hosting_task',
@@ -476,6 +479,7 @@ function hosting_custom_settings_user_default_permissions() {
     'roles' => array(
       'admin' => 'admin',
       'aegir client' => 'aegir client',
+      'aegir site operator' => 'aegir site operator',
       'root' => 'root',
     ),
     'module' => 'hosting_task',
@@ -522,6 +526,7 @@ function hosting_custom_settings_user_default_permissions() {
     'roles' => array(
       'admin' => 'admin',
       'aegir client' => 'aegir client',
+      'aegir site operator' => 'aegir site operator',
       'root' => 'root',
     ),
     'module' => 'hosting_civicrm_cron',
@@ -535,6 +540,7 @@ function hosting_custom_settings_user_default_permissions() {
       'aegir account manager' => 'aegir account manager',
       'aegir administrator' => 'aegir administrator',
       'aegir client' => 'aegir client',
+      'aegir site operator' => 'aegir site operator',
       'authenticated user' => 'authenticated user',
       'root' => 'root',
     ),
@@ -646,6 +652,7 @@ function hosting_custom_settings_user_default_permissions() {
       'admin' => 'admin',
       'administrator' => 'administrator',
       'aegir client' => 'aegir client',
+      'aegir site operator' => 'aegir site operator',
       'root' => 'root',
     ),
     'module' => 'hosting_clone',
@@ -667,6 +674,7 @@ function hosting_custom_settings_user_default_permissions() {
     'roles' => array(
       'admin' => 'admin',
       'aegir client' => 'aegir client',
+      'aegir site operator' => 'aegir site operator',
       'root' => 'root',
     ),
     'module' => 'hosting_task',
@@ -706,6 +714,7 @@ function hosting_custom_settings_user_default_permissions() {
     'roles' => array(
       'admin' => 'admin',
       'aegir client' => 'aegir client',
+      'aegir site operator' => 'aegir site operator',
       'root' => 'root',
     ),
     'module' => 'hosting_task',
@@ -735,6 +744,7 @@ function hosting_custom_settings_user_default_permissions() {
     'roles' => array(
       'admin' => 'admin',
       'aegir client' => 'aegir client',
+      'aegir site operator' => 'aegir site operator',
       'root' => 'root',
     ),
     'module' => 'hosting_tasks_extra',
@@ -876,6 +886,7 @@ function hosting_custom_settings_user_default_permissions() {
       'admin' => 'admin',
       'administrator' => 'administrator',
       'aegir client' => 'aegir client',
+      'aegir site operator' => 'aegir site operator',
       'root' => 'root',
     ),
     'module' => 'hosting_migrate',
@@ -890,6 +901,7 @@ function hosting_custom_settings_user_default_permissions() {
       'aegir administrator' => 'aegir administrator',
       'aegir client' => 'aegir client',
       'aegir platform manager' => 'aegir platform manager',
+      'aegir site operator' => 'aegir site operator',
       'root' => 'root',
     ),
     'module' => 'hosting_migrate_source',
@@ -995,6 +1007,7 @@ function hosting_custom_settings_user_default_permissions() {
     'roles' => array(
       'admin' => 'admin',
       'aegir client' => 'aegir client',
+      'aegir site operator' => 'aegir site operator',
       'root' => 'root',
     ),
     'module' => 'hosting_tasks_extra',
@@ -1041,6 +1054,7 @@ function hosting_custom_settings_user_default_permissions() {
       'admin' => 'admin',
       'administrator' => 'administrator',
       'aegir client' => 'aegir client',
+      'aegir site operator' => 'aegir site operator',
       'root' => 'root',
     ),
     'module' => 'hosting_site',
@@ -1055,6 +1069,7 @@ function hosting_custom_settings_user_default_permissions() {
       'aegir account manager' => 'aegir account manager',
       'aegir administrator' => 'aegir administrator',
       'aegir client' => 'aegir client',
+      'aegir site operator' => 'aegir site operator',
       'root' => 'root',
     ),
     'module' => 'hosting_alias',
@@ -1115,6 +1130,7 @@ function hosting_custom_settings_user_default_permissions() {
     'roles' => array(
       'admin' => 'admin',
       'aegir client' => 'aegir client',
+      'aegir site operator' => 'aegir site operator',
       'root' => 'root',
     ),
     'module' => 'hosting_tasks_extra',
@@ -1136,6 +1152,7 @@ function hosting_custom_settings_user_default_permissions() {
       'admin' => 'admin',
       'aegir administrator' => 'aegir administrator',
       'aegir client' => 'aegir client',
+      'aegir site operator' => 'aegir site operator',
       'root' => 'root',
     ),
     'module' => 'hosting_ssl',
@@ -1212,6 +1229,7 @@ function hosting_custom_settings_user_default_permissions() {
     'roles' => array(
       'admin' => 'admin',
       'aegir client' => 'aegir client',
+      'aegir site operator' => 'aegir site operator',
       'root' => 'root',
     ),
     'module' => 'hosting_tasks_extra',
@@ -1232,6 +1250,7 @@ function hosting_custom_settings_user_default_permissions() {
     'roles' => array(
       'admin' => 'admin',
       'aegir client' => 'aegir client',
+      'aegir site operator' => 'aegir site operator',
       'root' => 'root',
     ),
     'module' => 'hosting_tasks_extra',
@@ -1243,6 +1262,7 @@ function hosting_custom_settings_user_default_permissions() {
     'roles' => array(
       'admin' => 'admin',
       'aegir client' => 'aegir client',
+      'aegir site operator' => 'aegir site operator',
       'root' => 'root',
     ),
     'module' => 'hosting_task',
@@ -1442,6 +1462,17 @@ function hosting_custom_settings_user_default_permissions() {
     'module' => 'admin_menu',
   );
 
+  // Exported permission: 'download site backups'.
+  $permissions['download site backups'] = array(
+    'name' => 'download site backups',
+    'roles' => array(
+      'admin' => 'admin',
+      'aegir client' => 'aegir client',
+      'root' => 'root',
+    ),
+    'module' => 'hosting_custom_settings',
+  );
+
   // Exported permission: 'edit any book content'.
   $permissions['edit any book content'] = array(
     'name' => 'edit any book content',
@@ -1541,6 +1572,7 @@ function hosting_custom_settings_user_default_permissions() {
       'aegir administrator' => 'aegir administrator',
       'aegir client' => 'aegir client',
       'aegir platform manager' => 'aegir platform manager',
+      'aegir site operator' => 'aegir site operator',
       'authenticated user' => 'authenticated user',
       'root' => 'root',
     ),
@@ -1669,6 +1701,7 @@ function hosting_custom_settings_user_default_permissions() {
       'admin' => 'admin',
       'administrator' => 'administrator',
       'aegir client' => 'aegir client',
+      'aegir site operator' => 'aegir site operator',
       'root' => 'root',
     ),
     'module' => 'hosting_site',
@@ -1828,6 +1861,7 @@ function hosting_custom_settings_user_default_permissions() {
       'aegir account manager' => 'aegir account manager',
       'aegir administrator' => 'aegir administrator',
       'aegir client' => 'aegir client',
+      'aegir site operator' => 'aegir site operator',
       'root' => 'root',
     ),
     'module' => 'actions_permissions',
@@ -1842,6 +1876,7 @@ function hosting_custom_settings_user_default_permissions() {
       'aegir account manager' => 'aegir account manager',
       'aegir administrator' => 'aegir administrator',
       'aegir client' => 'aegir client',
+      'aegir site operator' => 'aegir site operator',
       'root' => 'root',
     ),
     'module' => 'actions_permissions',
@@ -1856,6 +1891,7 @@ function hosting_custom_settings_user_default_permissions() {
       'aegir account manager' => 'aegir account manager',
       'aegir administrator' => 'aegir administrator',
       'aegir client' => 'aegir client',
+      'aegir site operator' => 'aegir site operator',
       'root' => 'root',
     ),
     'module' => 'actions_permissions',
@@ -1870,6 +1906,7 @@ function hosting_custom_settings_user_default_permissions() {
       'aegir account manager' => 'aegir account manager',
       'aegir administrator' => 'aegir administrator',
       'aegir client' => 'aegir client',
+      'aegir site operator' => 'aegir site operator',
       'root' => 'root',
     ),
     'module' => 'actions_permissions',
@@ -1885,6 +1922,7 @@ function hosting_custom_settings_user_default_permissions() {
       'aegir administrator' => 'aegir administrator',
       'aegir client' => 'aegir client',
       'aegir platform manager' => 'aegir platform manager',
+      'aegir site operator' => 'aegir site operator',
       'root' => 'root',
     ),
     'module' => 'actions_permissions',
@@ -1899,6 +1937,7 @@ function hosting_custom_settings_user_default_permissions() {
       'aegir account manager' => 'aegir account manager',
       'aegir administrator' => 'aegir administrator',
       'aegir client' => 'aegir client',
+      'aegir site operator' => 'aegir site operator',
       'root' => 'root',
     ),
     'module' => 'actions_permissions',
@@ -2135,6 +2174,7 @@ function hosting_custom_settings_user_default_permissions() {
     'roles' => array(
       'admin' => 'admin',
       'aegir client' => 'aegir client',
+      'aegir site operator' => 'aegir site operator',
       'root' => 'root',
     ),
     'module' => 'hosting_task',
@@ -2173,6 +2213,7 @@ function hosting_custom_settings_user_default_permissions() {
       'aegir account manager' => 'aegir account manager',
       'aegir administrator' => 'aegir administrator',
       'aegir client' => 'aegir client',
+      'aegir site operator' => 'aegir site operator',
       'root' => 'root',
     ),
     'module' => 'hosting_task',
@@ -2213,6 +2254,7 @@ function hosting_custom_settings_user_default_permissions() {
       'aegir account manager' => 'aegir account manager',
       'aegir administrator' => 'aegir administrator',
       'aegir client' => 'aegir client',
+      'aegir site operator' => 'aegir site operator',
       'root' => 'root',
     ),
     'module' => 'hosting_client',
@@ -2238,6 +2280,7 @@ function hosting_custom_settings_user_default_permissions() {
     'roles' => array(
       'admin' => 'admin',
       'aegir client' => 'aegir client',
+      'aegir site operator' => 'aegir site operator',
       'root' => 'root',
     ),
     'module' => 'hosting_task',
@@ -2261,6 +2304,7 @@ function hosting_custom_settings_user_default_permissions() {
       'aegir administrator' => 'aegir administrator',
       'aegir client' => 'aegir client',
       'aegir platform manager' => 'aegir platform manager',
+      'aegir site operator' => 'aegir site operator',
       'authenticated user' => 'authenticated user',
       'root' => 'root',
     ),
@@ -2274,6 +2318,7 @@ function hosting_custom_settings_user_default_permissions() {
       'admin' => 'admin',
       'administrator' => 'administrator',
       'aegir platform manager' => 'aegir platform manager',
+      'aegir site operator' => 'aegir site operator',
       'root' => 'root',
     ),
     'module' => 'hosting_platform',
@@ -2286,6 +2331,7 @@ function hosting_custom_settings_user_default_permissions() {
       'aegir administrator' => 'aegir administrator',
       'aegir client' => 'aegir client',
       'aegir platform manager' => 'aegir platform manager',
+      'aegir site operator' => 'aegir site operator',
     ),
     'module' => 'node',
   );
@@ -2304,6 +2350,7 @@ function hosting_custom_settings_user_default_permissions() {
       'admin' => 'admin',
       'administrator' => 'administrator',
       'aegir client' => 'aegir client',
+      'aegir site operator' => 'aegir site operator',
       'root' => 'root',
     ),
     'module' => 'hosting_site',
@@ -2315,6 +2362,7 @@ function hosting_custom_settings_user_default_permissions() {
     'roles' => array(
       'admin' => 'admin',
       'aegir client' => 'aegir client',
+      'aegir site operator' => 'aegir site operator',
       'root' => 'root',
     ),
     'module' => 'hosting_task',
