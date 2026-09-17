@@ -1467,6 +1467,7 @@ function hosting_custom_settings_user_default_permissions() {
     'name' => 'download site backups',
     'roles' => array(
       'admin' => 'admin',
+      'administrator' => 'administrator',
       'aegir client' => 'aegir client',
       'root' => 'root',
     ),

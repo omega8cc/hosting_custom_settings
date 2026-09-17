@@ -119,6 +119,13 @@ function hosting_custom_settings_menu_alter(&$items) {
       $items[$path]['page callback'] = $callbacks[1];
     }
   }
+  // The AJAX list accepted any node type under plain view access and the
+  // table builder then read site fields off a platform or client node; the
+  // tab's own callback already insists on a site node, so the feed gets it.
+  if (isset($items['node/%node/ajax/backups']) && function_exists('hosting_site_backup_manager_menu_access')) {
+    $items['node/%node/ajax/backups']['access callback'] = 'hosting_site_backup_manager_menu_access';
+    $items['node/%node/ajax/backups']['access arguments'] = array(1);
+  }
 }
 
 /**
@@ -199,11 +206,17 @@ function _hosting_custom_settings_backup_strip($markup, $site) {
  * permission rebuild runs while the role does not exist yet and skips its
  * grants; the role is then created empty and the feature reads Overridden
  * until the next pass. Rebuilding the permissions once more after a pass that
- * touched our roles closes that window in the same run (idempotent: the
+ * walked both components closes that window in the same run (idempotent: the
  * rebuild writes the exported state, nothing else).
  */
 function hosting_custom_settings_features_post_restore($op, $items) {
-  if (empty($items['hosting_custom_settings']) || !in_array('user_role', $items['hosting_custom_settings'])) {
+  if (empty($items['hosting_custom_settings']) || !is_array($items['hosting_custom_settings'])) {
+    return;
+  }
+  $components = $items['hosting_custom_settings'];
+  // Only the pass that walked both components has the ordering problem; a
+  // revert of the role component alone stays exactly that.
+  if (!in_array('user_role', $components, TRUE) || !in_array('user_permission', $components, TRUE)) {
     return;
   }
   module_load_include('inc', 'features', 'includes/features.user');
