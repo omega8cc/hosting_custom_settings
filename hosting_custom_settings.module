@@ -66,3 +66,161 @@ function hosting_custom_settings_system_info_alter(&$info, $file, $type) {
     $info['features']['user_permission'] = array_values(array_diff($info['features']['user_permission'], $dark));
   }
 }
+
+/**
+ * Implements hook_permission().
+ *
+ * hosting_site_backup_manager gates its Export, Get, Delete and Restore
+ * routes by node view access alone, so any panel user who can see a site can
+ * pull its full database dump out of the Backups tab. This is the missing
+ * gate for the export and download routes; the delete and restore routes are
+ * mapped to the task permissions the site page already enforces (see
+ * hosting_custom_settings_menu_alter()). Exported to the roles that hold
+ * 'create backup task', so nothing changes for them.
+ */
+function hosting_custom_settings_permission() {
+  return array(
+    'download site backups' => array(
+      'title' => t('Download site backups'),
+      'description' => t('Make a site backup exportable and download the archive from the Backups tab. The archive carries the full database dump.'),
+      'restrict access' => TRUE,
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu_alter().
+ *
+ * The backup manager's routes keep their page callbacks; only the access side
+ * changes, and the two list callbacks are wrapped so the buttons of denied
+ * actions do not render. Guarded on the items' presence: the module is
+ * enabled on every BOA instance, but the alter must stay a no-op where it is
+ * not, and must not wrap a callback something else already replaced.
+ */
+function hosting_custom_settings_menu_alter(&$items) {
+  $gates = array(
+    'node/%node/backup/export/%' => 'download site backups',
+    'node/%node/backup/download/%' => 'download site backups',
+    'node/%node/backup/delete/%' => 'create backup-delete task',
+    'node/%node/backup/restore/%' => 'create restore task',
+  );
+  foreach ($gates as $path => $permission) {
+    if (isset($items[$path])) {
+      $items[$path]['access callback'] = 'hosting_custom_settings_backup_access';
+      $items[$path]['access arguments'] = array($permission, 1);
+    }
+  }
+  $wrappers = array(
+    'node/%node/backups' => array('hosting_site_backup_manager_page', 'hosting_custom_settings_backup_page'),
+    'node/%node/ajax/backups' => array('hosting_site_backup_manager_ajax_list', 'hosting_custom_settings_backup_ajax_list'),
+  );
+  foreach ($wrappers as $path => $callbacks) {
+    if (isset($items[$path]) && isset($items[$path]['page callback']) && $items[$path]['page callback'] == $callbacks[0]) {
+      $items[$path]['page callback'] = $callbacks[1];
+    }
+  }
+  // The AJAX list accepted any node type under plain view access and the
+  // table builder then read site fields off a platform or client node; the
+  // tab's own callback already insists on a site node, so the feed gets it.
+  if (isset($items['node/%node/ajax/backups']) && function_exists('hosting_site_backup_manager_menu_access')) {
+    $items['node/%node/ajax/backups']['access callback'] = 'hosting_site_backup_manager_menu_access';
+    $items['node/%node/ajax/backups']['access arguments'] = array(1);
+  }
+}
+
+/**
+ * Access callback for the gated backup routes.
+ *
+ * @param string $permission
+ *   The permission the route needs on top of viewing the site.
+ * @param object $node
+ *   The node the %node loader resolved.
+ *
+ * @return bool
+ *   TRUE when the current user holds the permission and may view the site.
+ */
+function hosting_custom_settings_backup_access($permission, $node) {
+  return is_object($node) && isset($node->type) && $node->type == 'site' && user_access($permission) && node_access('view', $node);
+}
+
+/**
+ * Page callback: the Backups tab without the buttons of denied actions.
+ */
+function hosting_custom_settings_backup_page($site) {
+  return _hosting_custom_settings_backup_strip(hosting_site_backup_manager_page($site), $site);
+}
+
+/**
+ * Page callback: the AJAX refresh of the same table, stripped the same way.
+ */
+function hosting_custom_settings_backup_ajax_list($site) {
+  $return = array('markup' => _hosting_custom_settings_backup_strip(hosting_site_backup_manager_backups_table($site), $site));
+  drupal_json_output($return);
+  exit();
+}
+
+/**
+ * Drop the buttons of the actions the current user may not take.
+ *
+ * Presentation only: the access callbacks above are the boundary. The table
+ * builder renders every action for every viewer, as either the
+ * _hosting_task_button() anchor or its disabled span, so both forms are
+ * matched by route and label; the "Create a new backup" link goes with the
+ * backup task permission.
+ *
+ * @param string $markup
+ *   The rendered table.
+ * @param object $site
+ *   The site node.
+ *
+ * @return string
+ *   The table without the denied buttons.
+ */
+function _hosting_custom_settings_backup_strip($markup, $site) {
+  $actions = array(
+    'download' => array('download site backups', t('Get')),
+    'export' => array('download site backups', t('Export')),
+    'delete' => array('create backup-delete task', t('Delete')),
+    'restore' => array('create restore task', t('Restore')),
+  );
+  $nid = (int) $site->nid;
+  foreach ($actions as $route => $action) {
+    if (user_access($action[0])) {
+      continue;
+    }
+    $label = preg_quote($action[1], '#');
+    $markup = preg_replace('#<a\b[^>]*\bhref="[^"]*/node/' . $nid . '/backup/' . $route . '/[0-9]+[^"]*"[^>]*>' . $label . '</a>#', '', $markup);
+    $markup = preg_replace('#<span class=\'hosting-button-disabled\'>' . $label . '</span>#', '', $markup);
+  }
+  if (!user_access('create backup task')) {
+    $markup = preg_replace('#(&nbsp;)?<a\b[^>]*\bhref="[^"]*/hosting_confirm/' . $nid . '/site_backup(\?[^"]*)?"[^>]*>[^<]*</a>#', '', $markup);
+  }
+  return $markup;
+}
+
+/**
+ * Implements hook_features_post_restore().
+ *
+ * A revert walks the components in .info order, user_permission before
+ * user_role, so on the pass that first creates a role exported here the
+ * permission rebuild runs while the role does not exist yet and skips its
+ * grants; the role is then created empty and the feature reads Overridden
+ * until the next pass. Rebuilding the permissions once more after a pass that
+ * walked both components closes that window in the same run (idempotent: the
+ * rebuild writes the exported state, nothing else).
+ */
+function hosting_custom_settings_features_post_restore($op, $items) {
+  if (empty($items['hosting_custom_settings']) || !is_array($items['hosting_custom_settings'])) {
+    return;
+  }
+  $components = $items['hosting_custom_settings'];
+  // Only the pass that walked both components has the ordering problem; a
+  // revert of the role component alone stays exactly that.
+  if (!in_array('user_role', $components, TRUE) || !in_array('user_permission', $components, TRUE)) {
+    return;
+  }
+  module_load_include('inc', 'features', 'includes/features.user');
+  if (function_exists('user_permission_features_rebuild')) {
+    user_permission_features_rebuild('hosting_custom_settings');
+  }
+}
