@@ -412,7 +412,6 @@ function hosting_custom_settings_user_default_permissions() {
     'name' => 'administer tasks',
     'roles' => array(
       'admin' => 'admin',
-      'aegir client' => 'aegir client',
       'root' => 'root',
     ),
     'module' => 'hosting_task',
