@@ -236,6 +236,7 @@ features[user_permission][] = create txp_upgrade task
 features[user_permission][] = create unlock task
 features[user_permission][] = create update task
 features[user_permission][] = create update_translations task
+features[user_permission][] = create updates_report task
 features[user_permission][] = create utf8mb4_convert task
 features[user_permission][] = create verify task
 features[user_permission][] = delete any book content
