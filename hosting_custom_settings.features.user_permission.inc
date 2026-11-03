@@ -1231,6 +1231,18 @@ function hosting_custom_settings_user_default_permissions() {
     'module' => 'hosting_tasks_extra',
   );
 
+  // Exported permission: 'create updates_report task'.
+  $permissions['create updates_report task'] = array(
+    'name' => 'create updates_report task',
+    'roles' => array(
+      'admin' => 'admin',
+      'aegir client' => 'aegir client',
+      'aegir site operator' => 'aegir site operator',
+      'root' => 'root',
+    ),
+    'module' => 'hosting_tasks_extra',
+  );
+
   // Exported permission: 'create utf8mb4_convert task'.
   $permissions['create utf8mb4_convert task'] = array(
     'name' => 'create utf8mb4_convert task',
