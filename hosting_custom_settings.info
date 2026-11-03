@@ -227,7 +227,6 @@ features[user_permission][] = create site content
 features[user_permission][] = create site git-checkout task
 features[user_permission][] = create site git-commit task
 features[user_permission][] = create site git-tag task
-features[user_permission][] = create site_health_check task
 features[user_permission][] = create sites on locked platforms
 features[user_permission][] = create ssl certificate
 features[user_permission][] = create task content

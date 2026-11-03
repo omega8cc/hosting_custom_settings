@@ -1123,18 +1123,6 @@ function hosting_custom_settings_user_default_permissions() {
     'module' => 'hosting_git_tag',
   );
 
-  // Exported permission: 'create site_health_check task'.
-  $permissions['create site_health_check task'] = array(
-    'name' => 'create site_health_check task',
-    'roles' => array(
-      'admin' => 'admin',
-      'aegir client' => 'aegir client',
-      'aegir site operator' => 'aegir site operator',
-      'root' => 'root',
-    ),
-    'module' => 'hosting_tasks_extra',
-  );
-
   // Exported permission: 'create sites on locked platforms'.
   $permissions['create sites on locked platforms'] = array(
     'name' => 'create sites on locked platforms',
