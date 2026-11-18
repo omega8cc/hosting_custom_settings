@@ -693,6 +693,32 @@ function hosting_custom_settings_user_default_permissions() {
     'module' => 'hosting_platform',
   );
 
+  // Exported permission: 'create drupal_upgrade task'.
+  $permissions['create drupal_upgrade task'] = array(
+    'name' => 'create drupal_upgrade task',
+    'roles' => array(
+      'admin' => 'admin',
+      'administrator' => 'administrator',
+      'aegir account manager' => 'aegir account manager',
+      'aegir administrator' => 'aegir administrator',
+      'root' => 'root',
+    ),
+    'module' => 'hosting_tasks_extra',
+  );
+
+  // Exported permission: 'create drupal_upgrade_return task'.
+  $permissions['create drupal_upgrade_return task'] = array(
+    'name' => 'create drupal_upgrade_return task',
+    'roles' => array(
+      'admin' => 'admin',
+      'administrator' => 'administrator',
+      'aegir account manager' => 'aegir account manager',
+      'aegir administrator' => 'aegir administrator',
+      'root' => 'root',
+    ),
+    'module' => 'hosting_tasks_extra',
+  );
+
   // Exported permission: 'create dunlock task'.
   $permissions['create dunlock task'] = array(
     'name' => 'create dunlock task',
