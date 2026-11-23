@@ -706,6 +706,19 @@ function hosting_custom_settings_user_default_permissions() {
     'module' => 'hosting_tasks_extra',
   );
 
+  // Exported permission: 'create drupal_upgrade_all task'.
+  $permissions['create drupal_upgrade_all task'] = array(
+    'name' => 'create drupal_upgrade_all task',
+    'roles' => array(
+      'admin' => 'admin',
+      'administrator' => 'administrator',
+      'aegir account manager' => 'aegir account manager',
+      'aegir administrator' => 'aegir administrator',
+      'root' => 'root',
+    ),
+    'module' => 'hosting_tasks_extra',
+  );
+
   // Exported permission: 'create drupal_upgrade_return task'.
   $permissions['create drupal_upgrade_return task'] = array(
     'name' => 'create drupal_upgrade_return task',
