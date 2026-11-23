@@ -191,6 +191,7 @@ features[user_permission][] = create delete task
 features[user_permission][] = create disable task
 features[user_permission][] = create dlock task
 features[user_permission][] = create drupal_upgrade task
+features[user_permission][] = create drupal_upgrade_all task
 features[user_permission][] = create drupal_upgrade_return task
 features[user_permission][] = create dunlock task
 features[user_permission][] = create enable task
