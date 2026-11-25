@@ -219,6 +219,7 @@ features[user_permission][] = create platform git-checkout task
 features[user_permission][] = create platform git-commit task
 features[user_permission][] = create platform git-pull task
 features[user_permission][] = create platform git-tag task
+features[user_permission][] = create platform_successor task
 features[user_permission][] = create rebuild_registry task
 features[user_permission][] = create restore task
 features[user_permission][] = create run_cron task
