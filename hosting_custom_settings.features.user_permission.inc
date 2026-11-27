@@ -455,6 +455,19 @@ function hosting_custom_settings_user_default_permissions() {
     'module' => 'system',
   );
 
+  // Exported permission: 'build drupal_upgrade target'.
+  $permissions['build drupal_upgrade target'] = array(
+    'name' => 'build drupal_upgrade target',
+    'roles' => array(
+      'admin' => 'admin',
+      'administrator' => 'administrator',
+      'aegir account manager' => 'aegir account manager',
+      'aegir administrator' => 'aegir administrator',
+      'root' => 'root',
+    ),
+    'module' => 'hosting_tasks_extra',
+  );
+
   // Exported permission: 'bypass node access'.
   $permissions['bypass node access'] = array(
     'name' => 'bypass node access',
