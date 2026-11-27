@@ -1039,6 +1039,19 @@ function hosting_custom_settings_user_default_permissions() {
     'module' => 'hosting_git_tag',
   );
 
+  // Exported permission: 'create platform_successor task'.
+  $permissions['create platform_successor task'] = array(
+    'name' => 'create platform_successor task',
+    'roles' => array(
+      'admin' => 'admin',
+      'administrator' => 'administrator',
+      'aegir account manager' => 'aegir account manager',
+      'aegir administrator' => 'aegir administrator',
+      'root' => 'root',
+    ),
+    'module' => 'hosting_tasks_extra',
+  );
+
   // Exported permission: 'create rebuild_registry task'.
   $permissions['create rebuild_registry task'] = array(
     'name' => 'create rebuild_registry task',
