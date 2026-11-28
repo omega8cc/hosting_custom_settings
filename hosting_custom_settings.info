@@ -170,6 +170,7 @@ features[user_permission][] = administer users
 features[user_permission][] = administer views
 features[user_permission][] = block IP addresses
 features[user_permission][] = build drupal_upgrade target
+features[user_permission][] = build platform_successor from lock
 features[user_permission][] = bypass node access
 features[user_permission][] = cancel account
 features[user_permission][] = cancel own tasks

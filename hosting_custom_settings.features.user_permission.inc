@@ -468,6 +468,19 @@ function hosting_custom_settings_user_default_permissions() {
     'module' => 'hosting_tasks_extra',
   );
 
+  // Exported permission: 'build platform_successor from lock'.
+  $permissions['build platform_successor from lock'] = array(
+    'name' => 'build platform_successor from lock',
+    'roles' => array(
+      'admin' => 'admin',
+      'administrator' => 'administrator',
+      'aegir account manager' => 'aegir account manager',
+      'aegir administrator' => 'aegir administrator',
+      'root' => 'root',
+    ),
+    'module' => 'hosting_tasks_extra',
+  );
+
   // Exported permission: 'bypass node access'.
   $permissions['bypass node access'] = array(
     'name' => 'bypass node access',
